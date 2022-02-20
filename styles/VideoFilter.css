@@ -1,0 +1,67 @@
+.videoFilterPanel {
+  background-color:#EEEEEE;
+  width: 100%;
+  display: flex;
+  z-index: 2;
+  justify-content: space-around;
+  
+}
+
+
+
+.videoFilterPanel__title {
+  font-size: 14px;
+  color: #666;
+  font-weight: normal;
+}
+
+.videoFilterPanel__search {
+  
+  border: 0.2px solid #b5afaf;
+  padding-top: 10;
+  padding-bottom: 10;
+  font-size: 14px;
+  border-radius: 50px;
+  padding-left: 50px;
+  height: 50px; 
+  border: none;
+  outline: none;
+  margin: 30px;
+
+}
+
+
+@media only screen and (max-width: 320px) {
+  .videoFilterPanel__search{
+    width: 200px;
+  }
+  
+}
+
+
+
+.videoFilterPanel__search:hover{
+  box-shadow: 1px 1px 1em #c4c4c4;
+
+};
+
+.videoFilterPanel_searchPanel {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.videoFilterPanel__channel {
+  height: 70px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.videoFilterPanel__channel:hover {
+  background: white;
+}
+
+

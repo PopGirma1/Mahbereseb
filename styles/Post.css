@@ -1,0 +1,264 @@
+
+.postPage{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    max-height: 263.5vh;
+    
+}
+
+.ProfilePhoto{
+    margin: 0 auto 0 auto;
+}
+
+.seeNumberOfFriends{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;  
+}
+
+.btnSelection{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap; 
+    flex-shrink: 4;
+}
+
+.postContainer{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.leftSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 45%;
+    overflow-x: hidden;
+    max-height: 234vh;
+    overflow-y: scroll;   
+     
+}
+
+.choose{
+    width: 99%;
+   
+}
+
+.choose1{
+    width: 99%;
+
+}
+
+.seePost{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: scroll;
+    padding-bottom: 5%;
+    overflow-x: hidden;
+
+}
+.listOfPhotos{
+    
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 3;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-x: hidden;
+    padding-bottom: 5%;
+    max-height: 75vh;
+  
+   
+}
+
+.listOfvideos{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 2;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:10px;
+    overflow-x: hidden;
+    padding-bottom: 5%;
+    max-height: 75vh;
+    padding-right: 5%;
+  
+  
+}
+
+.rightSideContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    max-height: 234vh;
+    margin-bottom: 2%;   
+}
+
+.rightSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.profileandPost{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-shrink: 1;
+    flex-wrap: wrap;  
+    gap:20px;
+    max-height: 60vh;
+}
+.personalInfo{
+    width: auto;
+  
+  }
+
+
+.horizonatl{
+    width: 99%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+
+.headerPhoto{
+    display: flex;
+    justify-content: space-around;
+    background-color:#f4f5f8;
+    margin-bottom: 20px;
+}
+#headerPhotoSection{
+    font-size: 20px;
+}
+
+#headerPhotoSection:hover{
+    background-color:#e4eeee
+}
+
+
+#pic{
+    margin: auto;
+    height:150px;
+    width: 150px;
+}
+
+#videoList{
+    margin: auto;
+    height:200px;
+    width: 200px; 
+}
+
+#Personalpic{
+    height:450px;
+    width: 450px;
+    margin: auto;
+}
+#image{
+    padding: 10px;
+    height: 600px;
+    width: 600px;
+    margin: auto;
+}
+
+.postTitile{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;   
+}
+.uploadPhoto{
+    
+    margin: auto;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+
+::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    scrollbar-width: none;
+}
+
+.profileandPostIndex{
+    z-index: 10;
+}
+
+.close{
+    background-color: #E4E6EB;
+    height:40px;
+    width: 40px;
+    border-radius: 50%;
+    z-index: 1;
+    padding: 0px;
+    text-align:center;
+}
+
+.reaction{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.reactionHolder{
+    background-color: #E4E6EB;
+}
+
+@media only screen and (max-width: 765px) {
+
+    .postContainer{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        margin: auto;
+        overflow-y: hidden;
+        overflow-x: hidden;
+ 
+    }
+    .seeNumberOfFriends{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 10px;
+       
+    }
+    .ProfilePhoto{
+        margin: 0 auto 0 0;
+    }
+    .btnSelection{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        gap: 20px;
+    }
+    .leftSection{
+        width: auto;
+    }
+    .rightSideContainer{
+        width: auto;
+    }
+
+    .horizonatl{
+        padding-right: 50%;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+  }

@@ -1,0 +1,30 @@
+.searchBar{
+    border: 0.2px solid #b5afaf;
+    padding-top: 10;
+    padding-bottom: 10;
+    font-size: 14px;
+    border-radius: 50px;
+    padding-left: 50px;
+    height: 50px;   
+}
+.searchBar:hover{
+    box-shadow: 1px 1px 1em #c4c4c4;
+  
+};
+.searchBarHolder{
+    position: relative;
+    width: 70%;
+    padding: 0;
+    margin: 0;
+}
+.searchBarHolder :focus-within {
+    transform: scale(1.025);
+}
+
+@media only screen and (max-width: 322px) {
+
+    .searchBar{
+        width: 80%;
+        padding-left: 10px;
+    }
+}

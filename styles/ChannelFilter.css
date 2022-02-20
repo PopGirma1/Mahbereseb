@@ -1,0 +1,95 @@
+.channelFilterPanel {
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: 25em;
+  background: #EEEEEE;
+  height: 263.5vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+ 
+
+}
+.channelFilterPanel__search:hover{
+  box-shadow: 1px 1px 1em #c4c4c4;
+
+};
+
+@media only screen and (max-width: 1204px) {
+  .channelFilterPanel{
+    margin: auto;
+    width: 110px;
+  }
+  .channelFilterPanel_searchPanel{
+    width: 50px;
+  }
+}
+
+
+@media only screen and (max-width: 842px) {
+  .channelFilterPanel{
+    margin: auto;
+    width: 210px;
+  }
+  .channelFilterPanel_searchPanel{
+    width: 100px;
+  }
+
+  .channelFilterPanel__search{
+    margin-right: auto;
+    padding-right: auto;
+    width: 200px;
+  }
+  .channelFilterPanel__channelList{
+    width: 10px;
+    font-size: 12px;
+  }
+  .channelFilterPanel__search:hover{
+    box-shadow: 1px 1px 1em #c4c4c4;
+  
+};
+
+}
+
+
+.channelFilterPanel__search {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 14px;
+  color: #666;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  height: 50px;
+  
+
+}
+
+.channelFilterPanel_searchPanel {
+  margin-top: 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+ 
+}
+
+.channelFilterPanel__channel {
+  height: 70px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.channelFilterPanel__channel:hover {
+  background: white;
+}
+
+.channelFilterPanel__thumbnail {
+  width: 20px;
+  margin-right: 20px;
+}
+

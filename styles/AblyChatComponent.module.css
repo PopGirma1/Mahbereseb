@@ -1,0 +1,57 @@
+
+
+.chatHolder{
+    width: 100%;
+}
+.chatText{
+
+    border-radius:10px;
+
+}
+.form{
+    width: 100%;
+    margin: auto;
+}
+
+.message{
+    margin: 20px;
+    padding: 30px;
+    background-color:rgb(235, 230, 225);
+    border-radius: 12px;
+}
+.messages{
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    gap:20px;
+    margin: auto;
+    padding: 20px;
+ 
+
+}
+.textAndButton{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding-top: 5%;
+    justify-content: space-around;
+
+
+}
+
+.textarea{
+    width: 60%;
+    height: 50px;
+    margin-left: 20%;
+}
+.button{
+    width: 20%;
+    background-color:#14A800;
+    font-size: 15px;
+    color:white;
+}
+
+.form{
+    
+    height: 200px;
+}

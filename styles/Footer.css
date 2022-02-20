@@ -1,0 +1,26 @@
+
+.row{
+display: flex;
+flex-direction: row;
+justify-content: space-around;
+flex-shrink: 3;
+flex-wrap: wrap;
+width: 100%;
+z-index: auto;
+
+}
+
+
+.heading{
+    font-size: 24px;
+    color: #746A72;
+    margin-bottom: 40px;
+    font-weight: bold;
+    font-size: 17px;
+
+}
+.footerLink{
+    display: flex;
+    flex-direction: column;
+    gap: 5%;
+}

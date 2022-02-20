@@ -1,0 +1,18 @@
+.groupChannelContainer{
+    width: 90%;
+    height: 263.3vh;
+    overflow-y: scroll;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+}
+.ablyChatComponent{
+    padding: 10px 10px;
+    width: 100%;
+    border-radius:12px
+}
+
+.title{
+    padding: 1% 25% 2% 25%;
+    position: static;
+  
+}
