@@ -29,6 +29,7 @@ import ThumbUpIcon from '@mui/icons-material/ThumbUp';
 import CommentIcon from '@mui/icons-material/Comment';
 
 
+
 const Input = styled('input')({
   display: 'none',
 });
@@ -72,26 +73,26 @@ export default function Post() {
         <Divider/>
       <div className='btnSelection'>
                 <div >
-                    <Button   variant="outlined">Post</Button>
+                    <Button   variant="outlined" id="subBtnSelection">Post</Button>
                 </div>
 
                 <div >
-                    <Button  variant="outlined"> About</Button>
+                    <Button  variant="outlined" id="subBtnSelection"> About</Button>
                 </div>
 
                 <div >
-                    <Button   variant="outlined">Friends</Button>
+                    <Button   variant="outlined" id="subBtnSelection">Friends</Button>
                 </div>
 
                 <div >
-                    <Button  variant="outlined"> Photos</Button>
+                    <Button  variant="outlined" id="subBtnSelection"> Photos</Button>
                 </div>
                 <div >
-                    <Button   variant="outlined">Videos</Button>
+                    <Button   variant="outlined" id="subBtnSelection">Videos</Button>
                 </div>
 
                 <div >
-                    <Button  variant="outlined"> More</Button>
+                    <Button  variant="outlined" id="subBtnSelection"> More</Button>
                 </div>
 
       </div>
@@ -490,82 +491,82 @@ export default function Post() {
                       </div>
                       <div className='listOfvideos'>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                 
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                 
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                 
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>
                         <ListItem button id="videoList">
-                        <video autoPlay loop style={{ width: '200px', height: '200px' }} controls >
+                        <video  loop style={{ width: '200px', height: '200px' }} controls >
                         <source src="/video/v1.mp4" />
                         </video>                  
                         </ListItem>

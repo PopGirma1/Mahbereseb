@@ -1,21 +1,23 @@
 .sideNavigation {
   background: #FFFFFF;
-  height: 263.5vh;
+  height: 100vh;
   width: 330px;
   flex-grow: 0;
   flex-shrink: 0;
   color: black;
   overflow-x: hidden;
-  margin-right: 12PX;
+  margin-right: 2PX;
   margin-top: 0PX;
   box-shadow: rgba(0, 0, 0, 0.2) 0px 18px 50px -10px;
+  overflow-y: scroll;
 
 }
 
-@media only screen and (max-width: 1204px) {
+@media only screen and (max-width: 618px) {
   .sideNavigation{
-    width: 0%;
+    width: 0;
     visibility: hidden;
+    display: none;
   }
 }
 
@@ -77,6 +79,10 @@
 }
 .mahberesb{
   margin-top: 15px;
+}
+
+a{
+  text-decoration: none;
 }
 
 

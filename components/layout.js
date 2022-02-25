@@ -13,10 +13,7 @@ import HomeIcon  from "@material-ui/icons/Home"
 import Search from "./search"
 export default function Layout({children}){
 
-    let newDate = new Date()
-    let date = newDate.getDate();
-    let month = newDate.getMonth() + 1;
-    let year = newDate.getFullYear();
+
 
     const [hover, setHover] = useState(false);
 
@@ -125,12 +122,6 @@ export default function Layout({children}){
                 </nav>
             </header>
         {children}
-        <div className={styles2.container}>
-            <footer className={styles.footer}>
-              <span style={{margin:"20px"}} className={styles.date}>
-            <p> © 2020</p> <p>-</p>  <p>{date} </p>   <p> {month}</p>  <p> {year}</p>
-              </span>
-            </footer>
-        </div>
+
      </>
 }

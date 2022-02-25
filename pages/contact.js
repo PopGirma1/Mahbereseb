@@ -8,7 +8,7 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
-import { Button } from '@mui/material';
+import { Button, Typography } from '@mui/material';
 import { useState } from 'react';
 
 export default function Contact(){
@@ -31,6 +31,7 @@ export default function Contact(){
         autoComplete="on"
         className='contactContainer'
       >
+            <Typography className='Title'>Contact Page</Typography>
             <div className='contactElements'>
                     <TextField id="outlined-basic" label="First Name" variant="outlined" />
                     <TextField id="outlined-basic" label="Last Name" variant="outlined" />
@@ -43,10 +44,10 @@ export default function Contact(){
                     />
                     
                     <FormControl fullWidth>
-                    <InputLabel id="demo-simple-select-label">Country Area</InputLabel>
+                    <InputLabel >Country Area</InputLabel>
                     <Select
                     labelId="demo-simple-select-label"
-                    id="demo-simple-select"
+                    id="outlined-basic"
                     value={country}
                     label="Country"
                     onChange={handleChangeContry}
@@ -69,7 +70,7 @@ export default function Contact(){
                     <InputLabel id="demo-simple-select-label">State</InputLabel>
                     <Select
                     labelId="demo-simple-select-label"
-                    id="demo-simple-select"
+                    id="outlined-basic"
                     value={state}
                     label="State"
                     onChange={handleChangeState}
@@ -86,7 +87,7 @@ export default function Contact(){
                     />
                     </div>
                      <div className='btnSubmit'>
-                     <Button type="submit" variant="contained" > Send Contact </Button>
+                     <Button type="submit" variant="contained" fullWidth > Send Contact </Button>
                      </div>   
             </div>
       </Card>

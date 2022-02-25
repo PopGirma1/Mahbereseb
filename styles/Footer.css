@@ -1,12 +1,21 @@
 
+.footerContainerPage{
+    display: flex;
+    flex-direction: column;
+    background-color: #001E3C;
+    color:white;
+   
+}
 .row{
+
 display: flex;
 flex-direction: row;
 justify-content: space-around;
 flex-shrink: 3;
 flex-wrap: wrap;
 width: 100%;
-z-index: auto;
+margin-bottom: 20px;
+
 
 }
 
@@ -23,4 +32,15 @@ z-index: auto;
     display: flex;
     flex-direction: column;
     gap: 5%;
+}
+
+.links{
+    display: flex;
+    flex-direction:column;
+    gap:10px;
+   
+}
+
+.links a{
+    color:white
 }

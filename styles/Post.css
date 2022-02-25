@@ -4,12 +4,13 @@
     display: flex;
     flex-direction: column;
     gap:20px;
-    max-height: 263.5vh;
-    
+    max-height: 100vh;
+    overflow-y: scroll;
 }
 
 .ProfilePhoto{
     margin: 0 auto 0 auto;
+    
 }
 
 .seeNumberOfFriends{
@@ -19,6 +20,7 @@
     flex-wrap: wrap;
     flex-shrink: 1;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;  
+    
 }
 
 .btnSelection{
@@ -27,6 +29,7 @@
     justify-content: space-around;
     flex-wrap: wrap; 
     flex-shrink: 4;
+   
 }
 
 .postContainer{
@@ -42,17 +45,18 @@
     width: 45%;
     overflow-x: hidden;
     max-height: 234vh;
-    overflow-y: scroll;   
-     
+    overflow-y: scroll;       
 }
 
 .choose{
     width: 99%;
+    
    
 }
 
 .choose1{
     width: 99%;
+    
 
 }
 
@@ -134,6 +138,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    
 }
 
 
@@ -143,13 +148,16 @@
     justify-content: space-around;
     background-color:#f4f5f8;
     margin-bottom: 20px;
+    border:2px solid #DDB329;
 }
 #headerPhotoSection{
     font-size: 20px;
+    
 }
 
 #headerPhotoSection:hover{
-    background-color:#e4eeee
+    background-color:#e4eeee;
+    
 }
 
 
@@ -157,18 +165,21 @@
     margin: auto;
     height:150px;
     width: 150px;
+    
 }
 
 #videoList{
     margin: auto;
     height:200px;
     width: 200px; 
+    
 }
 
 #Personalpic{
     height:450px;
     width: 450px;
     margin: auto;
+    
 }
 #image{
     padding: 10px;
@@ -182,11 +193,13 @@
     flex-direction: row;
     justify-content: space-evenly;
     flex-wrap: wrap;   
+    border:2px solid #DDB329;
 }
 .uploadPhoto{
     
     margin: auto;
     box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+    border:2px solid #DDB329;
 }
 
 
@@ -199,6 +212,7 @@
 
 .profileandPostIndex{
     z-index: 10;
+    
 }
 
 .close{
@@ -261,4 +275,8 @@
         gap: 20px;
     }
 
+  }
+
+  #subBtnSelection{
+      border:2px solid #DDB329;
   }

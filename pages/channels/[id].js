@@ -18,10 +18,13 @@ export default function ChannelPage({ channels, videos, channelInfo }) {
 
   return (
     <div className="channelPageWrapper">
-      <ChannelFilter channels={channels} />
-      {isWatchPanelOpened && (
-        <WatchPanel limit={10} onClose={onClose} history={history} />
-      )}
+      <div>
+          <ChannelFilter channels={channels} />
+          {isWatchPanelOpened && (
+            <WatchPanel limit={10} onClose={onClose} history={history} />
+          )}
+      </div>
+
       <div className="channelPage">
         <img className="channelPage__banner" src={channelInfo.authorBanners} />
         <div className="channelPage__inner">
@@ -39,10 +42,12 @@ export default function ChannelPage({ channels, videos, channelInfo }) {
           <div className="videos">
             {videos.map((video) => (
               <div onClick={() => addToHistory(video)} className="video">
+               <a>
                 <img className="video__thumbnail" src={video.thumbnail} />
                 <div className="video__title">
                   <a onClick={(e) => e.preventDefault()}>{video.title}</a>
                 </div>
+                </a>
               </div>
             ))}
           </div>

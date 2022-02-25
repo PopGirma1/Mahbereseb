@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import styles from "../styles/Layout.module.css";
-import { FaBeer } from 'react-icons/fa';
+import ManageAccountsIcon from '@mui/icons-material/ManageAccounts';
 import ContactsIcon from '@material-ui/icons/Contacts';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import ChatIcon  from'@material-ui/icons/Chat';
@@ -22,6 +22,9 @@ import PagesIcon from '@mui/icons-material/Pages';
 import UploadIcon from '@mui/icons-material/Upload';
 import TagIcon from '@mui/icons-material/Tag';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PersonalVideoIcon from '@mui/icons-material/PersonalVideo';
+import PersonIcon from '@mui/icons-material/Person';
+import PhotoIcon from '@mui/icons-material/Photo';
 import {
   faInfo,
   faLaptop,
@@ -35,24 +38,36 @@ export const SideNavigation = () => {
         <FontAwesomeIcon></FontAwesomeIcon>
         <Link href='/'>
       
-        <div>
+        <a>
         
-        <div style={{backgroundColor:"#EEEEEE",width:"95%",padding:"auto"}} className="logoandText">
+        <div style={{width:"95%",padding:"auto"}} className="logoandText">
         <Image src="/images/axsum.jpg" alt="Mahberesb"  width={72} height={72} />
         <div className="mahberesb">
         <span style={{color:"#DB4437"}}>Mah</span><span style={{color:"#F4B400"}}>Bere</span><span style={{color:"#DB4437"}}>Seb</span>
         </div>
         </div>
 
-        </div>
+        </a>
       
         </Link>
       </h1>
       <div className="sideNavigation__links">
-        <Link href="/channels/CalebTheVideoMaker2">Posts</Link>
-        <Link href="/videos">Video</Link>
-        <Link href="/post">Post</Link>
-        <div className="sideNavigation__divider"></div>
+        <Link href="/channels/CalebTheVideoMaker2">
+        <a>
+            <PersonalVideoIcon/>Videos
+          </a>
+          </Link>
+        <Link href="/videos">
+          
+        <a>
+            <PhotoIcon/>Photos
+          </a>
+        </Link>
+        <Link href="/post">
+          <a>
+            <PersonIcon/>User Post
+          </a>
+        </Link>
         <Link href="/chat">
           <a>
            <ChatIcon/> Chat/Message
@@ -83,12 +98,7 @@ export const SideNavigation = () => {
 
         <Link href="/account">
           <a>
-           <FaBeer/> Account
-          </a>
-        </Link>
-        <Link href="/about">
-          <a>
-           <InfoIcon/> About
+           <ManageAccountsIcon/> Account
           </a>
         </Link>
 
@@ -172,7 +182,14 @@ export const SideNavigation = () => {
            <GroupRemoveIcon/> Remove Group 
           </a>
         </Link>
-        
+        <div className="sideNavigation__divider">
+
+        <Link href="/about">
+          <a>
+           <InfoIcon/> About
+          </a>
+        </Link>
+        </div>
       </div>
     </div>
   );

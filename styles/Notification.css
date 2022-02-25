@@ -1,3 +1,17 @@
-.notificationcontainer{
-    margin:auto;
+.notificationContainer{
+    max-height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+}
+.notificationList{
+    overflow-y: scroll;
+    width: 60%;
+    gap:20px;
+}
+.notification{
+    background-color: #ffffff;
+    display: flex;
+    justify-content: space-between;
 }

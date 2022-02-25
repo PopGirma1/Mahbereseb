@@ -1,3 +1,28 @@
 .chatContainer{
-    margin:auto;
+    max-height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    gap:10px;
+   
+}
+
+
+.messageList{
+    overflow-y: scroll;
+    width: 50%;
+}
+.totalFriends{
+    display: flex;
+    justify-content: space-between;
+}
+@media only screen and (max-width:490px){
+    .chatContainer{
+        flex-wrap: wrap;
+    }
+    .messageList{
+        width: 100%;
+    }
 }

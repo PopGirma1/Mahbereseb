@@ -42,8 +42,6 @@ export default function VideosPage({ videos }) {
               <WatchPanel limit={10} onClose={onClose} history={history} />
             )}
           </div>
-
-
                   {filteredVideos.map((video) => (
                     <div onClick={() => addToHistory(video)} className="video">
                       <img className="video__thumbnail" src={video.thumbnail} />
