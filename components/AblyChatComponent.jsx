@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { useChannel } from "./AblyReactEffect";
 import styles from '../styles/AblyChatComponent.module.css';
+import { Button } from '@mui/material';
 
 const AblyChatComponent = () => {
+
+
+  var today = new Date(),
+
+  time = today.getFullYear() + "     " + today.getMonth()  + "    " + today.getDay()  + "    " + today.getHours() + ':' + today.getMinutes() + ':' + today.getSeconds();
 
     let inputBox = null;
     let messageEnd = null;
@@ -41,7 +47,11 @@ const AblyChatComponent = () => {
 
       const messages = receivedMessages.map((message, index) => {
         const author = message.connectionId === ably.connection.id ? "me" : "other";
-        return <span key={index} className={styles.message} data-author={author}>{message.data}</span>;
+        return <span key={index} className={styles.message} data-author={author}>
+          
+          <span> {message.data}</span> 
+          <span className='time'> Posted On:  {time}</span>
+          </span>;
       });
 
       <div ref={(element) => { messageEnd = element; }}></div>
@@ -55,6 +65,7 @@ const AblyChatComponent = () => {
           <div className={styles.chatText}>
             <p className='messages'>
             {messages}
+            
             </p>
             <div ref={(element) => { messageEnd = element; }}></div> 
           </div>
@@ -68,7 +79,8 @@ const AblyChatComponent = () => {
               onKeyPress={handleKeyPress}
               className={styles.textarea}
             ></textarea>
-            <button type="submit" className={styles.button} disabled={messageTextIsEmpty}>Send</button>
+            {/* <button type="submit" className={styles.button} disabled={messageTextIsEmpty}>Send</button> */}
+            <Button type="submit" className={styles.button} disabled={messageTextIsEmpty}  fullWidth > Send </Button>
             </div>
           </form>
         </div>

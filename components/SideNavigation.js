@@ -38,12 +38,12 @@ export const SideNavigation = () => {
         <FontAwesomeIcon></FontAwesomeIcon>
         <Link href='/'>
       
-        <a>
+        <a className="homelogo">
         
         <div style={{width:"95%",padding:"auto"}} className="logoandText">
         <Image src="/images/axsum.jpg" alt="Mahberesb"  width={72} height={72} />
         <div className="mahberesb">
-        <span style={{color:"#DB4437"}}>Mah</span><span style={{color:"#F4B400"}}>Bere</span><span style={{color:"#DB4437"}}>Seb</span>
+        <span style={{color:"#DB4437",fontSize:"20px"}}>Mah</span><span style={{color:"#F4B400",fontSize:"20px"}}>Bere</span><span style={{color:"#DB4437",fontSize:"20px"}}>Seb</span>
         </div>
         </div>
 
