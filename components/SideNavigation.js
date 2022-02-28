@@ -102,19 +102,11 @@ export const SideNavigation = () => {
           </a>
         </Link>
 
-        <Link href="/friends">
-          <a>
-           <PeopleOutlineIcon/> Friends
-          </a>
-        </Link>
-
-
         <Link href="/memories">
           <a>
            <MemoryIcon/> Memories
           </a>
         </Link>
-
 
         <Link href="/liveVideos">
           <a>

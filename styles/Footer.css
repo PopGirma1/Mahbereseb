@@ -1,13 +1,18 @@
 
 .footerContainerPage{
-    display: flex;
+    /* display: flex;
     flex-direction: column;
     background-color: #001E3C;
     color:white;
+    max-height: 300px;
+    position: absolute; */
+
+    width: 100%;
+    margin-top: 10vh;
+  
    
 }
-.row{
-
+/* .row{
 display: flex;
 flex-direction: row;
 justify-content: space-around;
@@ -15,10 +20,7 @@ flex-shrink: 3;
 flex-wrap: wrap;
 width: 100%;
 margin-bottom: 20px;
-
-
 }
-
 
 .heading{
     font-size: 24px;
@@ -43,4 +45,5 @@ margin-bottom: 20px;
 
 .links a{
     color:white
-}
+} */
+

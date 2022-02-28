@@ -11,6 +11,9 @@ import GroupsIcon  from "@material-ui/icons/Group";
 import InfoIcon  from "@material-ui/icons/Info";
 import HomeIcon  from "@material-ui/icons/Home"
 import Search from "./search"
+import 'bootstrap/dist/css/bootstrap.css';
+import Dropdown from 'react-bootstrap/Dropdown';
+
 export default function Layout({children}){
 
 
@@ -30,9 +33,24 @@ export default function Layout({children}){
     return <> 
             <header className={styles2.header} >
                 <nav className={styles.navbar}>
-                <span className="logo">
-                 <Search/>
-                 </span>
+
+
+                    <span className="logo">
+                    <Search/>
+                    </span>
+
+                    <ul>
+                    <button className={isOpen === false ? 
+                                        styles.hamburger : styles.hamburger+' '+styles.active}
+                                        onClick={openMenu}
+                                        >
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                        <span className={styles.bar}></span>
+                    </button>
+                    </ul>
+               
+
                 <ul className={isOpen === false ?  styles.navmenu : styles.navmenu +' '+ styles.active}>
 
                     <li className={styles.navitem}>
@@ -45,33 +63,64 @@ export default function Layout({children}){
                     </Link>
                     </li>
 
+
                     <li className={styles.navitem}>
-                    <Link href="/contact">
+                    <Link href="/videos">
                     <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
                                     onClick={openMenu}>
-                         Contact
+                         Photos
                         </a>
                     </Link>
                     </li>
 
+                    <li className={styles.navitem}>
+                    <Link href="/post">
+                    <a className={isOpen === false ? 
+                                    styles.navlink : styles.navlink+' '+styles.active}
+                                    onClick={openMenu}>
+                         User Post
+                        </a>
+                    </Link>
+                    </li>
 
                     <li className={styles.navitem}>
                     <Link href="/chat">
                     <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
                                     onClick={openMenu}>
-                       Chat
+                         Chat
                         </a>
                     </Link>
                     </li>
+
 
                     <li className={styles.navitem}>
                     <Link href="/group">
                     <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
                                     onClick={openMenu}>
-                        Group
+                         Group
+                        </a>
+                    </Link>
+                    </li>
+
+                    <li className={styles.navitem}>
+                    <Link href="/groupChannel">
+                    <a className={isOpen === false ? 
+                                    styles.navlink : styles.navlink+' '+styles.active}
+                                    onClick={openMenu}>
+                        Channel
+                        </a>
+                    </Link>
+                    </li>
+
+                    <li className={styles.navitem}>
+                    <Link href="/account">
+                    <a className={isOpen === false ? 
+                                    styles.navlink : styles.navlink+' '+styles.active}
+                                    onClick={openMenu}>
+                        Account
                         </a>
                     </Link>
                     </li>
@@ -82,44 +131,79 @@ export default function Layout({children}){
                     <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
                                     onClick={openMenu}>
-                      Notification
+                        Notifications
                         </a>
                     </Link>
                     </li>
 
-                    <li className={styles.navitem}>
-                    <Link href="/account">
-                    <a className={isOpen === false ? 
-                                    styles.navlink : styles.navlink+' '+styles.active}
-                                    onClick={openMenu}>
-                       Account
-                        </a>
-                    </Link>
-                    </li>
+                <li className={styles.navitem}>
+                          <Dropdown> 
+                        <Dropdown.Toggle variant=''>
+                         Other Options
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu className='dropDown'>
+                        <Dropdown.Item href="/liveVideos" className='dropDown'>
+                           Live Videos
+                        </Dropdown.Item>
 
-                    <li className={styles.navitem}>
-                    <Link href="/about">
-                    <a className={isOpen === false ? 
-                                    styles.navlink : styles.navlink+' '+styles.active}
-                                    onClick={openMenu}>
-                         About
-                        </a>
-                    </Link>
-                    </li>
+                        <Dropdown.Item href="/contact" className='dropDown'>
+                            Contact
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/memories" className='dropDown'>
+                          Memories
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/yourPages" className='dropDown'>
+                         Your Page
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/uploadedVideos" className='dropDown'>
+                         Uploaded Videos
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/tagedVideos" className='dropDown'>
+                        Taged Videos
+                        </Dropdown.Item>
+                        <Dropdown.Item href="/tagedPhotos" className='dropDown'>
+                        Taged Photos
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/invitedGroups" className='dropDown'>
+                        Invited Groups
+                        </Dropdown.Item>
+                        <Dropdown.Item  href="/watchVideos" className='dropDown'>
+                        Watch
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/addPerson" className='dropDown'>
+                        Add Person
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/removePerson" className='dropDown'>
+                        Remove Person
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/addgroup" className='dropDown'>
+                        Add Group
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/removeGroup" className='dropDown'>
+                        Remove Group 
+                        </Dropdown.Item>
+
+                        <Dropdown.Item href="/about" className='dropDown'>
+                            About
+                        </Dropdown.Item>
+
+                        </Dropdown.Menu>
+                    </Dropdown>
+                </li>
+
                 </ul>
-
-                <ul>
-                <button className={isOpen === false ? 
-                                    styles.hamburger : styles.hamburger+' '+styles.active}
-                                    onClick={openMenu}
-                                    >
-                    <span className={styles.bar}></span>
-                    <span className={styles.bar}></span>
-                    <span className={styles.bar}></span>
-                </button>
-                </ul>
-
                 </nav>
+
+                
             </header>
         {children}
 

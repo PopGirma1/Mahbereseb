@@ -1,9 +1,10 @@
 
 .header{
     border-bottom: 1px solid #435f86;
-     background-color: #001E3C;
+    background:#008cba;
     overflow-x: auto;
     position: absolute;
+  
 
 }
 
@@ -12,10 +13,9 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
-    background-color: #001E3C;
+    background:#008cba;
     flex-shrink: 4;
     flex-wrap: wrap;  
-
 }
 
 .hamburger {
@@ -31,17 +31,22 @@
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background-color: #222222;
+    background:#008cba
 }
 
 .navmenu {
+
     display: flex;
-    justify-content: space-around;  
+    justify-content: space-evenly;
+    padding-top: 20px;
+
 }
 
 .navitem {
-    margin-left: 3rem;
+    margin-left: 2rem;
     list-style-type: none; 
+    margin-right: 2em;
+
 }
 
 .navlink{
@@ -53,7 +58,7 @@
 }
 
 .navlink:hover{
-    color: #14A800;
+    color: black;
 }
 
 .navlogo {
@@ -64,21 +69,19 @@
 
 @media only screen and (max-width: 1081px) {
     .header{
-     background-color: #001E3C;
+        background:#008cba;
     }
     .navmenu {
-        position: fixed;
+        position: absolute;
         left: -100%;
         right: -100%;
         top: 5rem;
         flex-direction: column;
-         background-color: #001E3C;
+        background:#008cba;
         width: 100%;
-        border-radius: 10px;
         text-align: center;
         transition: 0.3s;
-        box-shadow:
-            0 10px 27px rgba(0, 0, 0, 0.05);
+        z-index: 100;
     }
 
     .navmenu.active {
@@ -89,15 +92,11 @@
     .navitem {
         margin: 4rem 0 0 5rem;
     }
-    .navmenu{
-         background-color: #001E3C;
-        z-index: 100;
-        padding-bottom: 20px;
-    }
 
     .hamburger {
         display: block;
         cursor: pointer;
+       
     }
 
     .hamburger.active .bar:nth-child(2) {
@@ -116,10 +115,6 @@
 
 }
 
-.footer {
-    align-items: center;
-    font-size: 1.5rem;
-}
 
 .navbar li a{
     text-decoration: none;
@@ -137,6 +132,17 @@
 @media only screen and (max-width:432){
     .navitem {
         width: 200px;
+        margin-top: 20px;
     }
+}
+
+.logo{
+    margin-right: 5%;
+}
+
+
+
+.dropDown{
+    z-index: 200;
 }
 

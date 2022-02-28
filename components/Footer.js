@@ -9,7 +9,7 @@ const UpperFooter = () => {
     return (
         <div className="footerContainerPage">
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="div">
                         <h3 className="h3" > About Us</h3>
                         <div className="links">
@@ -17,7 +17,6 @@ const UpperFooter = () => {
                         <a href="/about" >Vision</a>
                         <a href="/about" >BackGround</a>
                         </div>
-
                     </div>
                     <div className="div">
                         <h3 className="h3" > Services</h3>
@@ -44,16 +43,16 @@ const UpperFooter = () => {
                         <a href="/about"  >Leet Code</a>
                         </div>
                     </div>    
-                </div>
+                </div> */}
 
-           <div>
+                  <div>
                     <footer> 
                     <span style={{margin:"20px",display:"flex",flexDirection:"row",justifyContent:"center",gap:"5px"}}>
                      <p>© {date} _ {month} _ {year} All Right Reserved By Mahbereseb</p>
                     </span>
                    
                     </footer>
-           </div>
+                  </div>
         </div>
 
             

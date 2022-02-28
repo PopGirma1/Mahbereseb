@@ -13,7 +13,7 @@ padding-left: 20px;
 
 .searchIconPostion{
   margin-left: -50px;
-  margin-bottom: -9px;
+  margin-bottom: -3px;
 }
 
 
@@ -35,7 +35,7 @@ padding-left: 20px;
 .channelFilterPanel__search {
   padding-top: 10px;
   padding-bottom: 10px;
-  padding-left: 20px;
+  padding-left: 40px;
   padding-right: 20px;
   font-size: 14px;
   color: #666;
@@ -45,6 +45,7 @@ padding-left: 20px;
   margin-bottom: 30px;
   height: 50px;
   margin-left: 5px;
+  width: 240px;
  
 }
 
@@ -76,11 +77,16 @@ padding-left: 20px;
 
 }
 
-@media only screen and (max-width: 340px){
+@media only screen and (max-width: 575px){
 
-.channelFilterPanel {
-width: 0;
-display: none;
-visibility: hidden;
+.channelPageWrapper {
+ display: flex;
+ flex-direction: column;
     }
+
+.channelFilterPanel{
+  max-height: 400px;
+  overflow-y: scroll;
+  width: 100%;
+}
 }
