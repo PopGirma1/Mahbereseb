@@ -12,11 +12,14 @@
 @import "Notification.css";
 @import "Account.css";
 @import "Footer.css";
-@import "Post.css";
 @import "custom-popup.module.css";
 @import "AblyChatComponent.module.css";
 @import "Search.css";
 @import "groupChannel.css";
+@import "yourPage.css";
+@import "style.css";
+@import "UserPost.css";
+
 :root {
   --light-blue: #63a6d3;
   --dark-blue: #2368a2;

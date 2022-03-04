@@ -24,253 +24,458 @@ export default function Notification(){
   let k=`${date}-${month}-${year}`
     return(
         <div className="notificationContainer">
-           <List className="notificationList">
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+           <List >
+
+                <ListItem className="notification" >
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>               
                     </ListItemIcon>
-                    <CloseIcon/> 
+                <ListItemButton className="closeBtn">
+                    <CloseIcon style={{alignContent:"flex-end"}}/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                     <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                     <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
+                    </ListItemIcon>
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
+                    </ListItemIcon>
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                     <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                     <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
+                    </ListItemIcon>
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
+                    </ListItemIcon>
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
+                    </ListItemIcon>
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
+                    </ListItemButton>
+                </ListItem>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                  <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
+                    </ListItemIcon>
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                    <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                  <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                     <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                 <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                  <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                  <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                 <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                 <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
 
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
+                <ListItem className="notification">
+                    <ListItemIcon >
+                   <CardContent className="notificationContent" > 
+                     <div>
+                     In publishing and graphic design,
+                     Lorem ipsum is a placeholder text commonly used to demonstrate 
+                     the visual form of a document or a typeface without
+                     relying on meaningful content. Lorem ipsum may
+                     be used as a placeholder before the final copy is available
+                     </div>
+                      </CardContent>              
                     </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
-                    </ListItemButton>
-                </ListItem>
-
-                <ListItem >
-                    <ListItemButton className="notification">
-                    <ListItemIcon>
-                      <CardContent >  <div>this is sample notification</div> </CardContent>
-                    </ListItemIcon>
-                    <CloseIcon/> 
+               <ListItemButton className="closeBtn">
+                    <CloseIcon/>  
                     </ListItemButton>
                 </ListItem>
            </List>

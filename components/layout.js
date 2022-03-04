@@ -116,7 +116,7 @@ export default function Layout({children}){
                     </li>
 
                     <li className={styles.navitem}>
-                    <Link href="/account">
+                    <Link href="/newUser/new">
                     <a className={isOpen === false ? 
                                     styles.navlink : styles.navlink+' '+styles.active}
                                     onClick={openMenu}>
@@ -125,6 +125,15 @@ export default function Layout({children}){
                     </Link>
                     </li>
 
+                    <li className={styles.navitem}>
+                    <Link href="/viewAccount/Index">
+                    <a className={isOpen === false ? 
+                                    styles.navlink : styles.navlink+' '+styles.active}
+                                    onClick={openMenu}>
+                        Users
+                        </a>
+                    </Link>
+                    </li>
 
                     <li className={styles.navitem}>
                     <Link href="/notification">
@@ -137,62 +146,62 @@ export default function Layout({children}){
                     </li>
 
                 <li className={styles.navitem}>
-                          <Dropdown> 
-                        <Dropdown.Toggle variant=''>
+                    <Dropdown align="end" > 
+                        <Dropdown.Toggle variant="dark"  className='dropDown'>
                          Other Options
                         </Dropdown.Toggle>
-                        <Dropdown.Menu className='dropDown'>
-                        <Dropdown.Item href="/liveVideos" className='dropDown'>
+                        <Dropdown.Menu >
+                        <Dropdown.Item href="/liveVideos" >
                            Live Videos
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/contact" className='dropDown'>
+                        <Dropdown.Item href="/contact" >
                             Contact
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/memories" className='dropDown'>
+                        <Dropdown.Item href="/memories" >
                           Memories
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/yourPages" className='dropDown'>
+                        <Dropdown.Item href="/yourPages" >
                          Your Page
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/uploadedVideos" className='dropDown'>
+                        <Dropdown.Item href="/uploadedVideos" >
                          Uploaded Videos
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/tagedVideos" className='dropDown'>
+                        <Dropdown.Item href="/tagedVideos" >
                         Taged Videos
                         </Dropdown.Item>
-                        <Dropdown.Item href="/tagedPhotos" className='dropDown'>
+                        <Dropdown.Item href="/tagedPhotos" >
                         Taged Photos
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/invitedGroups" className='dropDown'>
+                        <Dropdown.Item href="/invitedGroups" >
                         Invited Groups
                         </Dropdown.Item>
-                        <Dropdown.Item  href="/watchVideos" className='dropDown'>
+                        <Dropdown.Item  href="/watchVideos" >
                         Watch
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/addPerson" className='dropDown'>
+                        <Dropdown.Item href="/addPerson" >
                         Add Person
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/removePerson" className='dropDown'>
+                        <Dropdown.Item href="/removePerson" >
                         Remove Person
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/addgroup" className='dropDown'>
+                        <Dropdown.Item href="/addgroup" >
                         Add Group
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/removeGroup" className='dropDown'>
+                        <Dropdown.Item href="/removeGroup" >
                         Remove Group 
                         </Dropdown.Item>
 
-                        <Dropdown.Item href="/about" className='dropDown'>
+                        <Dropdown.Item href="/about" >
                             About
                         </Dropdown.Item>
 

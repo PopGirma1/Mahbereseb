@@ -1,20 +1,36 @@
 .notificationContainer{
     max-height: 100vh;
     overflow-y: scroll;
-    width: 100%;
     justify-content: center;
     display: flex;
-}
-.notificationList{
-    overflow-y: scroll;
-    width: 700px;
-    gap:20px;
-    white-space: pre-wrap;	
-}
-.notification{
-    background-color: #ffffff;
-    display: flex;
-    justify-content: space-between;
-    white-space: pre-wrap;	
+    margin: 20px auto;
 }
 
+.notification{
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    white-space: pre-wrap;
+    text-indent: 10px;
+    text-align: justify;
+    gap:20px;	
+    width: 100%;
+    box-shadow: rgba(9, 30, 66, 0.25) 0px 1px 1px, rgba(9, 30, 66, 0.13) 0px 0px 1px 1px;
+    margin-top: 20px;
+}
+
+.closeBtn{
+    justify-content:end
+}
+
+.closeBtn:hover{
+background-color:red
+
+}
+.notificationContent{
+    max-width: 300px;
+  
+}

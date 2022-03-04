@@ -1,50 +1,92 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
+import React, { useState,useEffect } from "react";
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
-import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
-import CardActions from '@mui/material/CardActions';
-import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
-import IconButton from '@mui/material/IconButton';
-import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ShareIcon from '@mui/icons-material/Share';
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import MoreVertIcon from '@mui/icons-material/MoreVert';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import Divider from '@mui/material/Divider';
 import { Button, ButtonBase } from '@mui/material';
 import CustomPopup from './CustomPopup/customPopup';
-import { useState } from 'react';
-import TextareaAutosize from '@mui/material/TextareaAutosize';
 import PhotoCamera from '@mui/icons-material/PhotoCamera';
-import Stack from '@mui/material/Stack';
 import Image from "next/image";
-import ThumbUpIcon from '@mui/icons-material/ThumbUp';
-import CommentIcon from '@mui/icons-material/Comment';
+import fetch from 'isomorphic-unfetch';
+import {  Form, Loader } from 'semantic-ui-react';
+import { useRouter } from 'next/router';
+import TextareaAutosize from '@mui/material/TextareaAutosize';
+import Result from "./viewCreatedPost/Result";
 
 
-
-const Input = styled('input')({
-  display: 'none',
-});
-
-export default function Post() {
-  const [expanded, setExpanded] = React.useState(false);
+const Post = ({ posts }) => {
 
   const [visibility, setVisibility] = useState(false);
+  const [form, setForm] = useState({ title: '',descrption:'' });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [errors, setErrors] = useState({});
+  const router = useRouter();
+
+  useEffect(() => {
+      if (isSubmitting) {
+          if (Object.keys(errors).length === 0) {
+              createNote();
+          }
+          else {
+              setIsSubmitting(false);
+          }
+      }
+  }, [errors])
+
+  const createNote = async () => {
+      try {
+          const res = await fetch('http://localhost:3000/api/createpost', {
+              method: 'POST',
+              headers: {
+                  "Accept": "application/json",
+                  "Content-Type": "application/json"
+              },
+              body: JSON.stringify(form)
+          })
+          router.push("/");
+      } catch (error) {
+          console.log(error);
+      }
+  }
+
+  const handleSubmit = (e) => {
+      e.preventDefault();
+      let errs = validate();
+      setErrors(errs);
+      setIsSubmitting(true);
+  }
+
+  const handleChange = (e) => {
+      setForm({
+          ...form,
+          [e.target.name]: e.target.value
+      })
+  }
+
+  const validate = () => {
+      let err = {};
+
+      if (!form.title) {
+          err.title = 'title is required';
+      }
+      if (!form.descrption) {
+          err.descrption = 'descrption is required';
+      }
+      return err;
+  }
+
 
   const popupCloseHandler = () => {
     setVisibility(false);
   };
 
   return (
-<div className='postPage'>
+<div className='wholePostPageContainer'>
 
       <div className='ProfilePhoto'>
             <CardHeader
@@ -58,7 +100,7 @@ export default function Post() {
             />
       </div>
 
-      <div className='seeNumberOfFriends'>
+      <div className='status'>
             <div>
             <Button   variant="contained" fullWidth>Add to Story</Button>
             </div>
@@ -71,514 +113,273 @@ export default function Post() {
 
       </div>
         <Divider/>
-      <div className='btnSelection'>
-                <div >
-                    <Button   variant="outlined" id="subBtnSelection">Post</Button>
-                </div>
-
-                <div >
-                    <Button  variant="outlined" id="subBtnSelection"> About</Button>
-                </div>
-
-                <div >
-                    <Button   variant="outlined" id="subBtnSelection">Friends</Button>
-                </div>
-
-                <div >
-                    <Button  variant="outlined" id="subBtnSelection"> Photos</Button>
-                </div>
-                <div >
-                    <Button   variant="outlined" id="subBtnSelection">Videos</Button>
-                </div>
-
-                <div >
-                    <Button  variant="outlined" id="subBtnSelection"> More</Button>
-                </div>
-
-      </div>
-
-  <div className='postContainer'>
-    
-      <div className='rightSideContainer'>
-          <div className='profileandPostIndex'>
-            <Card>
-                    <CardContent>
-                      <div>
-                          <CardHeader
-                          className='profileandPost'
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                              
-                            </Avatar>
-                            
-                          }
-
-                          action={
-                                  <div>
-                                    <Button onClick={() => setVisibility(true)}  style={{background:"#E4E6E9",width:"300px",borderRadius:"16px",color:"#6B727A"}} >What is on your mind? </Button>
-                                    <CustomPopup
-                                      onClose={popupCloseHandler}
-                                      show={visibility}
-                                      title="Create Post"
-                                      className='postText'
-                                    >
-                                      <Divider style={{margin:"22px 0 22px 0",borderBottomWidth:"5px"}}/>
-                                      <div >
-                                      <TextareaAutosize
-                                          aria-label="empty textarea"
-                                          placeholder=" Write Your Post Hear. "
-                                          style={{ width: "100%", border: "none" ,outline: "none",paddingTop:"5px"}}
-                                          minRows={10}
-                                          />
-                                      </div>
+      <div className='rightAndLeftContainer'>
+              <div className='rightSection'>
+                    <Result  posts={posts}/>
+              </div>
+              <div className='leftSection'>
+                      <div className='profileandPostIndex'>
+                            <Card>
+                                    <CardContent>
                                       <div>
-                                      <Button  style={{background:"#E4E6E9",borderRadius:"16px",color:"#6B727A"}} fullWidth > Post </Button>
+                                          <CardHeader
+                                          className='profileandPost'
+                                          avatar={
+                                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
+                                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
+                                              
+                                            </Avatar>
+                                            
+                                          }
+
+                                          action={
+                                                  <div>
+                                                    <Button onClick={() => setVisibility(true)}  style={{background:"#E4E6E9",width:"300px",borderRadius:"16px",color:"#6B727A"}} >What is on your mind? </Button>
+                                                
+                                                    <CustomPopup
+                                                      onClose={popupCloseHandler}
+                                                      show={visibility}
+                                                      title="Create Post"
+                                                      className="popupPost"
+                                                    >
+                                                      <Divider style={{margin:"22px 0 22px 0",borderBottomWidth:"5px"}}/>
+                                                        <div className="form-container">
+                                                            <div>
+                                                              {
+                                                                isSubmitting
+                                                                    ? <Loader active inline='centered' />
+                                                                    : <Form onSubmit={handleSubmit} className="container-Form">
+                                                                        <Form.Input
+                                                                            fluid
+                                                                            error={errors.title ? { content: 'Please enter a title', pointing: 'below' } : null}
+                                                                            label='title'
+                                                                            placeholder='title'
+                                                                            name='title'
+                                                                            onChange={handleChange}
+                                                                        />
+                                                                          <TextareaAutosize
+                                                                            error={errors.descrption ? { content: 'Please enter a descrption', pointing: 'up' } : null}
+                                                                            aria-label="descrption"
+                                                                            minRows={15}
+                                                                            name='descrption'
+                                                                            onChange={handleChange}                                                                            
+                                                                            placeholder="descrption"
+                                                                            style={{ width: 400, height:80 }}
+                                                                          /> 
+                                                                          <Button  style={{background:"#E4E6E9",borderRadius:"16px",color:"#6B727A"}} fullWidth type="submit" > Post </Button> 
+                                                                    </Form>
+                                                                }
+                                                            </div>
+                                                          </div>
+
+                                                    </CustomPopup>
+                                                  </div>     
+                                          }
+
+                                          title="RophGirma"
+                                        />
+
                                       </div>
-                                    </CustomPopup>
-                                  </div>     
-                          }
-
-                          title="RophGirma"
-                        />
-
+                                    </CardContent>
+                            </Card>
                       </div>
-                    </CardContent>
-            </Card>
-          </div>
-        <div className="rightSection">
-            <Card className='personalInfo'>
-              <CardContent>
-                  <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
-
-                        </div>
-            </CardContent>
-                <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                    
-                        <Button> <span style={{marginRight:"10px"}}><ThumbUpIcon/></span>  <span style={{marginTop:"-5px"}}>like</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><CommentIcon/></span> <span style={{marginTop:"-5px"}}>comment</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><ShareIcon/></span> <span style={{marginTop:"-5px"}}>share</span> </Button>
-                  </CardContent>
-                </div>
-            </Card>
-            <Card className='personalInfo'>
-              <CardContent>
-                      <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
-                        </div>
-            </CardContent>
-
-            <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                    
-                        <Button> <span style={{marginRight:"10px"}}><ThumbUpIcon/></span>  <span style={{marginTop:"-5px"}}>like</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><CommentIcon/></span> <span style={{marginTop:"-5px"}}>comment</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><ShareIcon/></span> <span style={{marginTop:"-5px"}}>share</span> </Button>
-                  </CardContent>
-                </div>
-            </Card>
-            <Card className='personalInfo'>
-              <CardContent>
-                  <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
-                        </div>
-            </CardContent>
-
-            <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                        <Button>like</Button>
-                        <Button>comment</Button>
-                        <Button>share</Button>
-                  </CardContent>
-                </div>
-            </Card>
-            <Card className='personalInfo'>
-              <CardContent>
-                  <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
-                        </div>
-            </CardContent>
-
-            <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                    
-                        <Button> <span style={{marginRight:"10px"}}><ThumbUpIcon/></span>  <span style={{marginTop:"-5px"}}>like</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><CommentIcon/></span> <span style={{marginTop:"-5px"}}>comment</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><ShareIcon/></span> <span style={{marginTop:"-5px"}}>share</span> </Button>
-                  </CardContent>
-                </div>
-            </Card>
-            <Card className='personalInfo'>
-              <CardContent>
-                  <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
                           
-                  </div>
-            </CardContent>
-            <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                    
-                        <Button> <span style={{marginRight:"10px"}}><ThumbUpIcon/></span>  <span style={{marginTop:"-5px"}}>like</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><CommentIcon/></span> <span style={{marginTop:"-5px"}}>comment</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><ShareIcon/></span> <span style={{marginTop:"-5px"}}>share</span> </Button>
-                  </CardContent>
-                </div>
-            </Card>
-            <Card className='personalInfo'>
-              <CardContent>
-                  <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
+                      <div>
+                              <Card>
+                                <CardContent>
+                                  <div>
+                                  <List>
+                                      <ListItem button>
+                                        <ListItemText primary="Add Bio" style={{ color: '#1976D2' }}/>
+                                      </ListItem>
+                                      <Divider />
+                                      <ListItem button divider>
+                                        <ListItemText primary="Edit Detail" style={{ color: '#1976D2' }} />
+                                      </ListItem>
+                                      <ListItem button>
+                                        <ListItemText primary="Add Hobbies" style={{ color: '#1976D2' }} />
+                                      </ListItem>
+                                      <Divider light />
+                                      <ListItem button>
+                                        <ListItemText primary="Add Featurd" style={{ color: '#1976D2' }} />
+                                      </ListItem>
+                                </List>
+                                  </div>
+                                </CardContent>
+                              </Card>
+                      </div>
+
+                        <div>
+                            <Card>
+                                <CardContent>
+                                  <div className='seePost'>
+
+                                        <div className='headerPhoto'>
+                                          <Button id="headerPhotoSection">Photos</Button>
+                                        </div>
+                                        <div className='listOfPhotos'>
+                                          <ListItem button id="pic">
+                                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+                                          <ListItem button id="pic">
+                                              <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
+                                          </ListItem>
+
+                                        </div>
+                                  </div>
+                                </CardContent>
+                          </Card>
                         </div>
-            </CardContent>
 
-            <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                    
-                        <Button> <span style={{marginRight:"10px"}}><ThumbUpIcon/></span>  <span style={{marginTop:"-5px"}}>like</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><CommentIcon/></span> <span style={{marginTop:"-5px"}}>comment</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><ShareIcon/></span> <span style={{marginTop:"-5px"}}>share</span> </Button>
-                  </CardContent>
-                </div>
-            </Card>
-            <Card className='personalInfo'>
-              <CardContent>
-                  <div>
-                        <CardHeader
-                          avatar={
-                            <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
-                              <Image src='/images/papa.jpg' width="42px" height="42px"/>
-                            </Avatar>
-                          }
-                          action={
-                            <IconButton aria-label="settings">
-                              <MoreVertIcon />
-                            </IconButton>
-                          }
-                          title="RophGirma"
-                          subheader="September 14, 2016"
-                        />
-                            <ListItem button id="Personalpic">
-                                  <Image src="/images/papa1.jpg"  layout='fill'  objectFit='contain'   />
-                            </ListItem>
+                        <div>
+                        <Card>
+                            <CardContent>
+                              <div className='seePost'>
+
+                                    <div className='headerPhoto'>
+                                      <Button id="headerPhotoSection">Videos</Button>
+                                    </div>
+                                    <div className='listOfvideos'>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                 
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                 
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                 
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+                                      <ListItem button id="videoList">
+                                      <video  loop style={{ width: '200px', height: '200px' }} controls >
+                                      <source src="/video/v1.mp4" />
+                                      </video>                  
+                                      </ListItem>
+
+                                    </div>
+                              </div>
+                            </CardContent>
+                          </Card>
+                        </div>
                   </div>
-            </CardContent>
-
-            <div className='reactionHolder'>
-                  <CardContent className='reaction'>
-                    
-                        <Button> <span style={{marginRight:"10px"}}><ThumbUpIcon/></span>  <span style={{marginTop:"-5px"}}>like</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><CommentIcon/></span> <span style={{marginTop:"-5px"}}>comment</span> </Button>
-                        <Button> <span style={{marginRight:"10px"}}><ShareIcon/></span> <span style={{marginTop:"-5px"}}>share</span> </Button>
-                  </CardContent>
-                </div>
-            </Card>
-        </div> 
-      </div>
-      <div className='leftSection'>
-            <div>
-              <Card  className='choose'>
-                <CardContent>
-                  <div>
-                  <List>
-                      <ListItem button>
-                        <ListItemText primary="Add Bio" style={{ color: '#1976D2' }}/>
-                      </ListItem>
-                      <Divider />
-                      <ListItem button divider>
-                        <ListItemText primary="Edit Detail" style={{ color: '#1976D2' }} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary="Add Hobbies" style={{ color: '#1976D2' }} />
-                      </ListItem>
-                      <Divider light />
-                      <ListItem button>
-                        <ListItemText primary="Add Featurd" style={{ color: '#1976D2' }} />
-                      </ListItem>
-
-                </List>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div>
-              <Card className='choose1'>
-              <CardContent className='horizonatl'>
-                    <ListItem button style={{ color: '#1976D2' ,width:"30%" }}>
-                      <ListItemText primary="Photo/Video" />
-                    </ListItem>
-                    <Divider />
-                    <ListItem button style={{ color: '#1976D2', width:"30%" }}>
-                      <ListItemText primary="Life Event"/>
-                    </ListItem>
-                    <ListItem button style={{ color: '#1976D2', width:"30%" }}>
-                      <ListItemText primary="Live Event" />
-                    </ListItem>
-              </CardContent>
-              </Card>
-            </div>
-
-          <div>
-          <Card>
-              <CardContent>
-                <div className='seePost'>
-
-                      <div className='headerPhoto'>
-                        <Button id="headerPhotoSection">Photos</Button>
-                      </div>
-                      <div className='listOfPhotos'>
-                        <ListItem button id="pic">
-                          <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-                        <ListItem button id="pic">
-                            <Image src='/images/papa.jpg'  layout='fill'  objectFit='contain'  />
-                        </ListItem>
-
-                      </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <div>
-          <Card>
-              <CardContent>
-                <div className='seePost'>
-
-                      <div className='headerPhoto'>
-                        <Button id="headerPhotoSection">Videos</Button>
-                      </div>
-                      <div className='listOfvideos'>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                 
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                 
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                 
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-                        <ListItem button id="videoList">
-                        <video  loop style={{ width: '200px', height: '200px' }} controls >
-                        <source src="/video/v1.mp4" />
-                        </video>                  
-                        </ListItem>
-
-                      </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-      </div>
-  </div>
+        </div>
  </div>
     
   );
 }
+
+Post.getInitialProps = async () => {
+  const res = await fetch('http://localhost:3000/api/createpost');
+  const { data } = await res.json();
+
+  return { posts: data }
+}
+
+export default Post;

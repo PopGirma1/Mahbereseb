@@ -19,6 +19,7 @@
     "ably": "^1.2.5-beta.1",
     "babel-preset-es2015": "^6.24.1",
     "bootstrap": "^5.1.3",
+    "dotenv": "^16.0.0",
     "input-material-ui": "^2.9.0",
     "isomorphic-unfetch": "^3.1.0",
     "mongodb": "^4.4.0",

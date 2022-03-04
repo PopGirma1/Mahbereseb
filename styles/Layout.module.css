@@ -21,17 +21,23 @@
 .hamburger {
     display: none;
     position: static;
-   
+    border-radius: 50%;
+    width: 50px;
+    height: 50px; 
+    background-color: rgba(255,255,255,0.05);
+    border-color:#008cba;
 }
+
 
 .bar {
     display: block;
-    width: 35px;
-    height: 3px;
+    width: 30px;
+    height: 5px;
     margin: 5px auto;
     -webkit-transition: all 0.3s ease-in-out;
     transition: all 0.3s ease-in-out;
-    background:#008cba
+    background:#474b4d
+
 }
 
 .navmenu {
@@ -105,7 +111,7 @@
 
     .hamburger.active .bar:nth-child(1) {
         -webkit-transform: translateY(8px) rotate(45deg);
-        transform: translateY(8px) rotate(45deg);
+        transform: translateY(11px) rotate(45deg);
     }
 
     .hamburger.active .bar:nth-child(3) {
@@ -144,5 +150,6 @@
 
 .dropDown{
     z-index: 200;
+    background-color: #8f290a !important;
 }
 

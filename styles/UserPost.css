@@ -1,0 +1,131 @@
+::-webkit-scrollbar {
+    display: none;
+  }
+  html {
+    scrollbar-width: none;
+}
+
+.wholePostPageContainer{
+    max-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: scroll;
+}
+.ProfilePhoto{
+    margin: 0 auto 0 auto;  
+}
+
+.rightAndLeftContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+}
+.status{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    flex-shrink: 1;
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;     
+}
+.rightSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    overflow-x: hidden; 
+  
+}
+
+.leftSection{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: hidden;
+    max-height: 99vh;
+    overflow-y: scroll;    
+    width: 45%;   
+}
+
+.profileandPostIndex{
+    z-index: 10; 
+}
+
+.profileandPost{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-shrink: 1;
+    flex-wrap: wrap;  
+    gap:20px;
+}
+
+.seePost{
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    overflow-y: scroll;
+    padding-bottom: 5%;
+    overflow-x: hidden;
+}
+
+.headerPhoto{
+    display: flex;
+    justify-content: space-around;
+    background-color:#f4f5f8;
+    margin-bottom: 20px;
+    border:2px solid #DDB329;
+}
+#headerPhotoSection{
+    font-size: 20px;  
+}
+
+#headerPhotoSection:hover{
+    background-color:#e4eeee;   
+}
+
+.listOfPhotos{    
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 3;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow-x: hidden;
+}
+#pic{
+    height:150px;
+    width: 150px;   
+}
+
+.listOfvideos{
+    display: flex;
+    flex-direction: row;
+    flex-shrink: 3;
+    overflow-y: scroll;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap:10px;
+    overflow-x: hidden;
+}
+#videoList{
+    height:200px;
+    width: 200px;  
+}
+
+
+@media only screen and (max-width: 765px) {
+    .status{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding-bottom: 10px;  
+    }
+    .ProfilePhoto{
+        margin: 0 auto 0 0;
+    }
+}
