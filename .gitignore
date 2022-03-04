@@ -1,5 +1,5 @@
 .env
-.next
-.next.config
-next.config
-node_modules
+/.next
+/next.config
+/node_modules
+/.env
